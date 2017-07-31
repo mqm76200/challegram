@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="431010" android:versionName="V 1.2" package="ir.Challegram.best" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="25" />
+	<uses-feature android:glEsVersion="0x20000" android:required="true" />
+	<uses-feature android:name="android.hardware.microphone" android:required="false" />
+	<uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.camera2" android:required="false" />
+	<uses-feature android:name="android.hardware.camera2.full" android:required="false" />
+	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
+	<uses-feature android:name="android.hardware.location" android:required="false" />
+	<uses-feature android:name="android.hardware.location.network" android:required="false" />
+	<uses-feature android:name="android.hardware.telephony" android:required="false" />
+	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="org.thunderdog.challegram.permission.MAPS_RECEIVE" />
+	<uses-permission android:name="org.thunderdog.challegram.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+	<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+	<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+	<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+	<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+	<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+	<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
+	<uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
+	<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+	<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+	<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.READ_APP_BADGE" />
+	<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+	<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+	<meta-data android:name="android.support.VERSION" android:value="25.3.1" />
+	<application android:allowBackup="true" android:fullBackupContent="true" android:hardwareAccelerated="true" android:icon="@drawable/app_launcher" android:label="@string/appName" android:largeHeap="true" android:manageSpaceActivity=".ManageSpaceActivity" android:name="org.thunderdog.challegram.BaseApplication" android:theme="@style/AppTheme">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDzAoJrVB72LgqSZ1LP6Hpp8egGEJVH7PA" />
+		<uses-library android:name="com.google.android.maps" android:required="false" />
+		<receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<category android:name="ir.Challegram.best" />
+			</intent-filter>
+		</receiver>
+		<activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="org.thunderdog.challegram.voip.VoIPPermissionActivity" android:taskAffinity="org.thunderdog.challegram.voip" android:theme="@style/TransparentTheme" />
+		<activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="org.thunderdog.challegram.voip.VoIPFeedbackActivity" android:taskAffinity="org.thunderdog.challegram.voip" android:theme="@style/TransparentTheme" />
+		<service android:description="@string/ServiceNetworkReceiver" android:enabled="true" android:exported="false" android:name="org.thunderdog.challegram.TGNotificationService">
+			<intent-filter>
+				<action android:name="org.thunderdog.challegram.start" />
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</service>
+		<service android:exported="false" android:name="org.thunderdog.challegram.TGGcmListenerService">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+			</intent-filter>
+		</service>
+		<service android:exported="false" android:name="org.thunderdog.challegram.TGGcmInstanceIdService">
+			<intent-filter>
+				<action android:name="com.google.android.gms.iid.InstanceID" />
+			</intent-filter>
+		</service>
+		<service android:exported="false" android:name="org.thunderdog.challegram.TGGcmRegistrationService" />
+		<service android:exported="false" android:name="org.thunderdog.challegram.voip.TGCallService" />
+		<receiver android:name="org.thunderdog.challegram.voip.VoIPMediaButtonReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.MEDIA_BUTTON" />
+			</intent-filter>
+		</receiver>
+		<receiver android:exported="false" android:name="org.thunderdog.challegram.TGReplyReceiver" />
+		<receiver android:enabled="true" android:exported="true" android:name="org.thunderdog.challegram.TGSecretCodeReceiver" android:permission="android.permission.PROCESS_OUTGOING_CALLS">
+			<intent-filter>
+				<action android:name="android.provider.Telephony.SECRET_CODE" />
+				<data android:scheme="android_secret_code" />
+			</intent-filter>
+		</receiver>
+		<service android:exported="true" android:name="org.thunderdog.challegram.TGMessageSyncServiceGps" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+			<intent-filter>
+				<action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+			</intent-filter>
+		</service>
+		<service android:enabled="true" android:name="org.thunderdog.challegram.TGMessageSyncServiceNative" android:permission="android.permission.BIND_JOB_SERVICE" />
+		<activity android:configChanges="locale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:label="@string/appName" android:launchMode="singleTask" android:name="org.thunderdog.challegram.ManageSpaceActivity" android:windowSoftInputMode="adjustPan" />
+		<activity android:configChanges="locale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:label="@string/appName" android:launchMode="singleTask" android:name="org.thunderdog.challegram.MainActivity" android:windowSoftInputMode="adjustPan">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="text/plain" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="image/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="video/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND_MULTIPLE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="image/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="*/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND_MULTIPLE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="*/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:host="telegram.me" android:scheme="http" />
+				<data android:host="telegram.me" android:scheme="https" />
+				<data android:host="telegram.dog" android:scheme="http" />
+				<data android:host="telegram.dog" android:scheme="https" />
+				<data android:host="t.me" android:scheme="http" />
+				<data android:host="t.me" android:scheme="https" />
+			</intent-filter>
+			<intent-filter android:icon="@drawable/app_launcher" android:priority="1">
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:scheme="tg" />
+			</intent-filter>
+		</activity>
+		<provider android:authorities="org.thunderdog.challegram.providerjb" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
+		</provider>
+		<uses-library android:name="com.sec.android.app.multiwindow" android:required="false" />
+		<meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632dp" />
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598dp" />
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632dp" />
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598dp" />
+		<activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver" />
+		<receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER" />
+			</intent-filter>
+		</receiver>
+		<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService" />
+		<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+	</application>
+</manifest>
